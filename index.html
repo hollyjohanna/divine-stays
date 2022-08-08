@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Bootstrap CDNs -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <!-- Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts CDNS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC&family=Libre+Franklin:wght@300;400;700&family=Montserrat:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <!-- MapBox CDNS -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+  <!-- Swiper CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <!-- Date Range Picker -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+  <!-- Stylesheet Link -->
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Divine Stays</title>
+</head>
+<body>
+  <nav class="nav-bar">
+    <div id="logo-box">
+      <a href="index.html"><img id="logo-img" src="img/logo-white.png" alt="Divine Stays Logo" width="80"></a>
+      <p id="logo-text">Divine Stays</p>
+    </div>
+    <i id="nav-button" class="bi bi-list"></i>
+    <div class="nav-link-container">
+      <ul>
+        <li class="nav-links"><a href="index.html">Home</a></li>
+        <li class="nav-links" id="nav-link-accom"><a href="#">Accommodation</a></li>
+        <li class="nav-links"><a href="#">Wines</a></li>
+        <li class="nav-links"><a href="#">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="first-slide">
+            <h1>Welcome to Divine Stays</h1>
+            <h2>Find your perfect holiday amongst the vines</h2>
+            <p id="hero-text">Now we've made it easier than ever to find the perfect holiday location for any event. In association with Tourism New Zealand we've collated the most beautiful, quality vineyard stays in the region, ensuring you the very best experience.</p>
+            <button type="button" id="get-started-button" class="button">Get Started <i class="bi bi-arrow-right-circle"></i></button>
+            <div id="scroll-button">
+              <i class="bi bi-arrow-down-circle"></i>
+            </div>
+            <div class="landing-pg-images">
+              <div class="landing-img-container">
+                <img class="landing-img" id="rooms-img" src="img/room.jpg" alt="A hotel bedroom">
+                <h3 class="landing-img-heading">Rooms</h3>
+                <p class="landing-img-description">We offer the very best rooms and accommodation of all kinds to help you find your perfect stay. Click the image above to find a room!</p>
+              </div>
+              <div class="landing-img-container">
+                <img class="landing-img" src="img/restaurant.jpg" alt="A picture of a restaurant">
+                <h3 class="landing-img-heading">Restaurants</h3>
+                <p class="landing-img-description">There are many restaurants to visit who source the best wines from all over New Zealand. To find some of our recommendations click the image above.</p>
+              </div>
+              <div class="landing-img-container">
+                <img class="landing-img" src="img/yoga.jpg" alt="A woman doing yoga">
+                <h3 class="landing-img-heading">Activities / Wellbeing</h3>
+                <p class="landing-img-description">In addition to the rooms and restaurants we recommend, we offer deals on the best health and wellbeing activites close by our recommended accomodation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="second-slide">
+            <h1 class="input-header">Find Your Perfect Holiday</h1>
+            <div class="form-section">
+              <div class="input-section">
+                <i class="bi bi-person-fill"></i>
+                <p>Guests:</p>
+                <div class="guests-btn-container">
+                  <button onclick="decrementButton()"
+                  id="decrement" class="guests-btn">
+                  -
+                  </button>
+                  <span id="number" class="guest-num">0</span>
+                  <button onclick="incrementButton()"
+                  id="increment" class="guests-btn">
+                  +
+                  </button>
+                </div>
+              </div>
+
+              <div class="input-section">
+                <i class="bi bi-geo-alt"></i>
+                <p>Location:</p>
+                <select id="location-input" required="" data-parsley-required-message="Please select your Location">
+                  <option value="">Choose...</option>
+                  <option value="Hawke's Bay">Hawke's Bay</option>
+                  <option value="Martinborough">Martinborough</option>
+                  <option value="Canterbury">Canterbury</option>
+                </select>
+              </div>
+
+              <div class="input-section">
+                <i class="bi bi-calendar"></i>
+                <p>Dates:</p>
+                <input type="text" name="daterange" value="">
+                <!-- <select id="location-input" required="" data-parsley-required-message="Please select your Location">
+                  <option value="">Choose...</option>
+                  <option value="Wellington">Wellington</option>
+                  <option value="Auckland">Auckland</option>
+                  <option value="Christchurch">Christchurch</option>
+                </select> -->
+              </div>
+            </div>
+            <div id="message"></div>
+            <button type="button" class="accommodation-button" id="accommodation-button">Find My Accommodation <i class="bi bi-arrow-right-circle"></i></button>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="third-slide">
+            <div id="result"></div>
+
+            <div class="test">
+              <div id="result2"></div>
+              <div id="map-container">
+                <div id="map"></div>
+              </div>
+              <div id="distance-container"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+<footer>
+  <div class="footer-main-container">
+    <div class="link-container">
+      <a href="#/" class="footer-links-main" onclick="expandToggle()">Contact Us</a>
+      <ul id="footer-link-ul">
+        <li><a href="#" class="footer-links">Postal Address</a></li>
+        <li><a href="#" class="footer-links">Email Address</a></li>
+        <li><a href="#" class="footer-links">Contact Phone</a></li>
+        <li><a href="#" class="footer-links">More Details</a></li>
+      </ul>
+    </div>
+    <div class="link-container">
+      <a href="#/" class="footer-links-main" onclick="expandToggle2()">About</a>
+      <ul id="footer-link-ul-2">
+        <li><a href="#" class="footer-links">Rooms</a></li>
+        <li><a href="#" class="footer-links">Locations</a></li>
+        <li><a href="#" class="footer-links">Vineyards</a></li>
+        <li><a href="#" class="footer-links">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="link-container-extra">
+      <a href="#/" class="footer-links-main">Experiences</a>
+      <ul id="footer-link-ul-3">
+        <li><a href="#" class="footer-links">Prosecco Hills</a></li>
+        <li><a href="#" class="footer-links">Vineyard Tours</a></li>
+        <li><a href="#" class="footer-links">Wine Tasting</a></li>
+        <li><a href="#" class="footer-links">Photo Shoots</a></li>
+      </ul>
+    </div>
+    <div class="subscribe-container">
+      <a href="#/" class="subscribe-header">Subcribe To Our Newsletter</a>
+      <div class="input-container">
+        <input type="text" placeholder="youremailaddress@mail.com" name="email" required>
+        <button type="button" class="second-button">Subscribe</button>
+      </div>
+      <div class="socials-container">
+        <i class="bi bi-facebook"></i>
+        <i class="bi bi-instagram"></i>
+        <i class="bi bi-twitter"></i>
+        <i class="bi bi-linkedin"></i>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright-container">
+    <img id="tourism-logo" src="img/tourismlogo-transparent.png" alt="Tourism NZ logo">
+    <p>Copyright 2022 Divine Stays</p>
+  </div>
+</footer>
+
+<!-- Jquery Script -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<!-- Parsley Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js" integrity="sha512-eyHL1atYNycXNXZMDndxrDhNAegH2BDWt1TmkXJPoGf1WLlNYt08CSjkqF5lnCRmdm3IrkHid8s2jOUY4NIZVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Animation Library -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Bootstrap Script -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<!-- Mapbox Turf Script -->
+<script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+<!-- Swiper Script -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Date range Scripts -->
+<script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

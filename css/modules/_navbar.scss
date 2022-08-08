@@ -1,0 +1,139 @@
+.nav-bar {
+  margin-top: 35px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .nav-link-container.active {
+    opacity: 1;
+    background-color: $beige;
+    position: absolute;
+    top: 123px;
+    z-index: 5;
+    box-shadow: 0px 41px 20px 8px rgba(0,0,0,0.75);
+    overflow: visible;
+    max-height: 336px;
+    transition: all .2s ease-in-out;
+  }
+  .nav-link-container {
+    opacity: 0;
+    max-height: 0;
+    position: absolute;
+    top: 123px;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+    text-align: center;
+    width: 100%;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 26px 0;
+      font-size: 25px;
+      font-family: $headerfont;
+      list-style-type: none;
+
+      li {
+        border-bottom: solid 1px $umber;
+        padding: 15px;
+        margin: 0 10px;
+      }
+
+      li:hover {
+        background-color: $warmgrey;
+        transition: all 0.2s ease-in-out;
+      }
+
+      li a {
+        text-decoration: none;
+        margin-bottom: 10px;
+        color: $umber;
+        padding: 0 30px;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+  .bi-list {
+    color: white;
+    font-size: 50px;
+    margin-right: 30px;
+  }
+  .bi-list:hover {
+    color: $beige;
+  }
+
+  #logo-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 30px;
+    cursor: pointer;
+
+    #logo-img {
+      margin: auto;
+      display: block;
+      cursor: pointer;
+    }
+
+    #logo-text {
+      text-align: center;
+      margin-top: 0;
+      font-family: $headerfont;
+      font-size: 20px;
+      color: white;
+    }
+  }
+}
+
+
+
+@media only screen and (min-width: 600px) {
+
+}
+@media only screen and (min-width: 1000px) {
+  .nav-bar {
+    justify-content: center;
+    #logo-box {
+      margin: 0 30px;
+    }
+    .nav-link-container, .nav-link-container.active {
+      position: inherit;
+      opacity: 1;
+      overflow: visible;
+      max-height: none;
+      width: 698px;
+      margin-top: auto;
+      margin-bottom: auto;
+      box-shadow: none;
+      background-color: transparent;
+      ul {
+        margin: 0;
+        flex-direction: row;
+        font-size: 30px;
+        li {
+          border: none;
+          padding: 0;
+          margin: 0;
+        }
+        li a {
+          display: inline-block;
+          color: white;
+          transition: all 0.3s ease-in-out;
+        }
+        li a:hover {
+          color: $warmgrey;
+        }
+        li:hover {
+          background-color: transparent;
+        }
+      }
+    }
+    .bi-list {
+      display: none;
+    }
+  }
+}
+@media only screen and (min-width: 1200px) {
+
+}

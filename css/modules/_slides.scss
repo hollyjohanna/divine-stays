@@ -1,0 +1,325 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.first-slide {
+  margin: 130px 40px 50px;
+  #hero-text {
+    color: white;
+    font-family: $mainfont;
+    font-size: 16px;
+    line-height: 180%;
+    font-weight: 100;
+    margin-bottom: 90px;
+  }
+  #scroll-button {
+    display: none;
+  }
+  .landing-pg-images {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+
+    .landing-img-heading {
+      font-family: $subfont;
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .landing-img {
+      margin: auto;
+      width: 80%;
+      border: 5px solid $beige;
+      margin-bottom: 15px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .landing-img:hover {
+      border: 10px solid $umber;
+      transition: all 0.2s ease-in-out;
+    }
+    .landing-img-description {
+      display: none;
+    }
+  }
+}
+
+.second-slide {
+  margin: 130px 40px 50px;
+  background-color: #efe9e3e6;
+  width: 100%;
+  height: 100%;
+  padding: 46px 36px;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.25);
+  .input-header {
+    color: black;
+    letter-spacing: 1px;
+    line-height: 40px;
+  }
+  .form-section {
+    margin-top: 50px;
+    .input-section {
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      select, input {
+        width: -webkit-fill-available;
+        padding: 7px;
+        font-family: 'Libre Franklin';
+        font-size: 13px;
+        margin-top: -5px;
+      }
+      .guests-btn-container {
+        margin-top: -5px;
+        .guest-num {
+          font-family: $mainfont;
+          font-size: 16px;
+          margin: 0 5px;
+        }
+        .guests-btn {
+          padding: 5px 0;
+          width: 33px;
+          font-size: 16px;
+          border: 1px solid grey;
+          border-radius: 3px;
+        }
+      }
+      p {
+        font-family: $mainfont;
+        font-size: 16px;
+        margin: 0 7px;
+      }
+    }
+  }
+  .accommodation-button {
+    @include button;
+    padding: 14px 10px;
+    border: 2px solid black;
+    font-size: 16px;
+    color: black;
+    margin-top: 30px;
+  }
+}
+
+.third-slide {
+  text-align: left;
+  width: 90%;
+  #result {
+    #start-new-search-btn {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+    #location-header {
+      background-color: $beige;
+      color: black;
+      font-family: $headerfont;
+      font-size: 30px;
+      padding: 20px;
+      margin: 40px 0 10px 0;
+      text-align: left;
+      width: 260px;
+    }
+  }
+}
+
+//-----------------------------Media Queries------------------------------------
+
+@media only screen and (min-width: 670px) {
+
+  .first-slide {
+    .landing-pg-images {
+      margin-top: 200px;
+      .landing-img {
+        height: 250px;
+        width: 60%;
+      }
+    }
+  }
+
+}
+@media only screen and (min-width: 1000px) {
+
+  .first-slide {
+    h1 {
+      font-size: 50px;
+    }
+    h2 {
+      font-size: 22px;
+    }
+    #hero-text {
+      font-size: 20px;
+      padding: 0 50px;
+    }
+    .landing-pg-images {
+      flex-direction: row;
+      .landing-img-container {
+        width: 33%;
+        .landing-img {
+          width: 90%;
+        }
+        .landing-img-heading {
+          margin-bottom: 30px;
+          font-size: 23px;
+        }
+        .landing-img-description {
+          display: block;
+          padding: 0 30px;
+          margin: 0;
+          text-align: left;
+          font-size: 16px;
+          font-family: $mainfont;
+        }
+      }
+    }
+  }
+  .second-slide {
+    width: 70%;
+    .form-section {
+      padding: 0 100px;
+    }
+  }
+}
+@media only screen and (min-width: 1400px) {
+
+  .first-slide {
+    margin: 130px 200px 50px;
+    h1 {
+      font-size: 60px;
+    }
+    h2 {
+      font-size: 25px;
+    }
+    #hero-text {
+      padding: 0 100px;
+    }
+    #scroll-button {
+      display: block;
+      margin-top: 100px;
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 3;
+      width: 80px;
+      height: 80px;
+      background-color: $warmgrey;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      i {
+        font-size: 50px;
+        color: white;
+        margin-top: 3px;
+        transition: all 0.4s ease-in-out;
+      }
+    }
+
+    #scroll-button:hover {
+      cursor: pointer;
+      i {
+        color: $umber;
+      }
+    }
+    .landing-pg-images {
+      margin-top: 100px;
+    }
+  }
+  .second-slide {
+    padding: 80px 80px;
+    .input-header {
+      font-size: 40px;
+    }
+    .form-section {
+      .input-section {
+        p {
+          font-size: 20px;
+        }
+        select, input {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .third-slide {
+    #result {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      #location-header {
+        margin-top: 0;
+      }
+      a {
+        margin-top: auto;
+        margin-bottom: auto;
+        #start-new-search-btn {
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+
+  .first-slide {
+    .landing-pg-images {
+      margin-top: 200px;
+      .landing-img {
+        height: 300px;
+      }
+    }
+  }
+
+}
+
+@media only screen and (min-width: 1700px) {
+
+  .first-slide {
+    .landing-pg-images {
+      margin-top: 300px;
+    }
+  }
+  .second-slide {
+    padding: 100px 100px;
+  }
+
+}
+
+@media only screen and (min-width: 1800px) {
+
+  .first-slide {
+    .landing-pg-images {
+      margin-top: 400px;
+    }
+  }
+
+}

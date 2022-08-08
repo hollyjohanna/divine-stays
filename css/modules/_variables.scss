@@ -1,0 +1,28 @@
+// Colours
+$warmgrey: #A59F95;
+$beige: #EFE9E3;
+$umber: #564313;
+$burntochre: #A07E29;
+$yelowochre: #BAA035;
+// Fonts
+$mainfont: 'Libre Franklin', sans-serif;
+$headerfont: 'Cormorant SC', serif;
+$subfont: 'Montserrat', sans-serif;
+// Mixins
+
+@mixin footer-headers {
+  display: block;
+  margin-bottom: 20px;
+  font-family: $subfont;
+  color: black;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+@mixin button {
+  transition: all 0.3s ease;
+  background-color: rgba(255,255,255,0);
+  font-family: $mainfont;
+  cursor: pointer;
+}

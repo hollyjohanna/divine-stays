@@ -1,0 +1,201 @@
+#map {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 80vw;
+  height: 100%;
+  margin: auto;
+}
+
+#map-container {
+  position: relative;
+  height: 500px;
+  margin: 30px 0;
+}
+
+
+#result2 {
+  .accomodation-cards {
+    background-color: $beige;
+    padding: 17px;
+    margin-bottom: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    #accom-img {
+      width: 100%;
+      margin: auto;
+      border: 5px solid white;
+    }
+    .accom-cards-details-first {
+      #accom-name {
+        font-family: $mainfont;
+        margin: 10px 0 8px 0;
+        font-size: 20px;
+        font-weight: 100;
+      }
+      #accom-location {
+        font-family: $subfont;
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
+      #details {
+        #price-container {
+          display: flex;
+          justify-content: space-between;
+          #accom-price {
+            font-family: $mainfont;
+            font-weight: 700;
+            font-size: 16px;
+          }
+        }
+        #accom-description {
+          margin: 10px 0;
+          font-family: $mainfont;
+          font-size: 13px;
+          line-height: 180%;
+          font-weight: 200;
+        }
+        #accom-subdescription {
+          font-family: $subfont;
+          font-size: 10px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .accom-cards-details-second {
+      width: 100%;
+      #meal-option {
+        margin: 0;
+        font-family: $mainfont;
+        font-size: 11px;
+        line-height: 180%;
+        font-weight: 200;
+      }
+      .accordion {
+        margin: 20px 0;
+        --bs-accordion-active-color: #000000;
+        --bs-accordion-active-bg: #A59F95;
+        --bs-accordion-btn-focus-box-shadow: none;
+        .accordion-header {
+          font-family: $mainfont;
+        }
+        .accordion-button {
+          background-color: #dbd3c7;
+        }
+        #flush-collapseOne, #flush-collapseTwo {
+          padding: 12px;
+        }
+      }
+      #stars-and-buttons {
+        display: flex;
+        justify-content: space-between;
+        #star-rating {
+          width: 50%;
+          max-width: 100px;
+          max-height: 20px;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+        #book-button {
+          width: 40%;
+          padding: 10px 20px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+.warning {
+  background: yellow;
+  padding: 10px 20px;
+  width: max-content;
+  font-family: $subfont;
+  font-size: 13px;
+  margin: auto;
+  border-radius: 5px;
+  p {
+    margin: 0;
+  }
+}
+
+.success {
+  background: #C8DD98;
+  padding: 10px 20px;
+  width: max-content;
+  font-family: $subfont;
+  font-size: 13px;
+  margin: auto;
+  border-radius: 5px;
+  p {
+    margin: 0;
+  }
+}
+
+.marker {
+  background-color: white;
+  background-image: url("../img/room.jpg");
+  background-size: cover;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+//-----------------------------Media Queries------------------------------------
+
+@media only screen and (min-width: 670px) {
+
+  #result2 {
+    .accomodation-cards {
+      justify-content: space-between;
+      #accom-img {
+        height: 250px;
+        width: 48%;
+        margin: 0;
+      }
+      .accom-cards-details-first {
+        width: 50%;
+      }
+    }
+  }
+
+}
+@media only screen and (min-width: 1000px) {
+
+  #result2 {
+    .accomodation-cards {
+      justify-content: space-between;
+      #accom-img {
+        height: 250px;
+        width: 48%;
+        margin: 0;
+      }
+      .accom-cards-details-first {
+        width: 50%;
+      }
+    }
+  }
+
+}
+@media only screen and (min-width: 1400px) {
+
+  .test {
+    display: flex;
+    justify-content: space-between;
+    #result2 {
+      width: 55%;
+      padding: 30px;
+      max-height: 560px;
+      overflow: scroll;
+    }
+    #map-container {
+      width: 43%;
+      #map {
+        width: 100%;
+        border: 5px solid white;
+      }
+    }
+  }
+
+}
